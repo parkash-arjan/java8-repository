@@ -12,6 +12,8 @@ public class FilterLambda2 {
 		List<Person> list = Arrays.asList(new Person("Parkash", 36), new Person("Divya", 36), new Person("Anira", 4), new Person("Samarth", 2), new Person("Samantha", 2));
 		printAll(list);
 
+		// We are using non-lambda approach first . Check FilterLambda3 for lambda version of the same implementation.
+		
 		// Sort by name
 		Collections.sort(list, new Comparator<Person>() {
 			@Override
