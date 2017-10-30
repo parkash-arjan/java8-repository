@@ -28,6 +28,6 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "[Person : Name = " + getName() + " , Age = " + getAge() + " ]";
+		return "[Person : Name = " + getName() + " ,  Age = " + getAge() + " ]";
 	}
 }
