@@ -10,6 +10,8 @@ public class Person {
 	private String name;
 	private int age;
 
+	//private string lastName;
+	
 	public String getName() {
 		return name;
 	}
@@ -28,6 +30,6 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "[Person : Name = " + getName() + " ,  Age = " + getAge() + " ]";
+		return "[Person : Name = " + getName() + " , Age = " + getAge() + "  ]";
 	}
 }
