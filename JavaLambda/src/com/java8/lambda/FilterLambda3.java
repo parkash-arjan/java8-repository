@@ -19,9 +19,14 @@ public class FilterLambda3 {
 
 		printByCriteria(list, person -> true);
 
-		// Sort by age
+		// Sort by age increasing order
 		Collections.sort(list, (person1, person2) -> Integer.valueOf(person1.getAge()).compareTo(Integer.valueOf(person2.getAge())));
+		printByCriteria(list, person -> true);
 
+		// Sort by age decreasing order
+		Collections.sort(list, (person1, person2) -> {
+			return Integer.valueOf(person2.getAge()).compareTo(Integer.valueOf(person1.getAge()));
+		});
 		printByCriteria(list, person -> true);
 
 		// print person with age less than 10
@@ -40,7 +45,7 @@ public class FilterLambda3 {
 	// }
 
 	public static void printByCriteria(List<Person> list, IFilterCriteria filterCriteria) {
-		System.out.println("Person List With Criteria");
+		System.out.println("Persons:");
 		for (Person person : list) {
 			if (filterCriteria.isPassed(person)) {
 				System.out.println(person);
