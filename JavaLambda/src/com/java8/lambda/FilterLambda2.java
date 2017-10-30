@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import com.java8.common.IFilterCriteria;
 import com.java8.common.Person;
 
 public class FilterLambda2 {
@@ -12,8 +13,9 @@ public class FilterLambda2 {
 		List<Person> list = Arrays.asList(new Person("Parkash", 36), new Person("Divya", 36), new Person("Anira", 4), new Person("Samarth", 2), new Person("Samantha", 2));
 		printAll(list);
 
-		// We are using non-lambda approach first . Check FilterLambda3 for lambda version of the same implementation.
-		
+		// We are using non-lambda approach first . Check FilterLambda3 for
+		// lambda version of the same implementation.
+
 		// Sort by name
 		Collections.sort(list, new Comparator<Person>() {
 			@Override
@@ -33,7 +35,7 @@ public class FilterLambda2 {
 		printAll(list); //
 
 		// print person with age less than 10
-		FilterCriteria filterCriteriaLessThan10 = new FilterCriteria() {
+		IFilterCriteria filterCriteriaLessThan10 = new IFilterCriteria() {
 			@Override
 			public boolean isPassed(Person person) {
 				if (person.getAge() < 10) {
@@ -45,7 +47,7 @@ public class FilterLambda2 {
 		printByCriteria(list, filterCriteriaLessThan10);
 
 		// print person with age greater than 10
-		FilterCriteria filterCriteriaGreaterThan10 = new FilterCriteria() {
+		IFilterCriteria filterCriteriaGreaterThan10 = new IFilterCriteria() {
 			@Override
 			public boolean isPassed(Person person) {
 				if (person.getAge() > 10) {
@@ -65,7 +67,7 @@ public class FilterLambda2 {
 		}
 	}
 
-	public static void printByCriteria(List<Person> list, FilterCriteria filterCriteria) {
+	public static void printByCriteria(List<Person> list, IFilterCriteria filterCriteria) {
 		System.out.println("Person List With Criteria");
 		for (Person person : list) {
 			if (filterCriteria.isPassed(person)) {
@@ -74,9 +76,4 @@ public class FilterLambda2 {
 		}
 
 	}
-}
-
-interface FilterCriteria {
-	public boolean isPassed(Person person);
-
 }
