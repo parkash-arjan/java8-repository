@@ -15,7 +15,6 @@ public class FilterLambdaPassingCustomBehaviorV2 {
 		printByCriteria(list, (person) -> person.getAge() > 10 ? true : false, person -> System.out.println(person));
 
 		// if age is less than 10 increment age by 5
-
 		printByCriteria(list, (person) -> person.getAge() < 10 ? true : false, person -> {
 			person.setAge(person.getAge() + 5);
 			System.out.println(person);
