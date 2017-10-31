@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
-import com.java8.common.IFilterCriteria;
 import com.java8.common.Person;
 
 public class FilterLambdaPredicateV1 {
