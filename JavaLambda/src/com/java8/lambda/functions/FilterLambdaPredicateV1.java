@@ -9,21 +9,18 @@ import com.java8.common.Person;
 
 public class FilterLambdaPredicateV1 {
 	public static void main(String[] args) {
-		List<Person> list = Arrays.asList(new Person("Parkash", 36), new Person("Divya", 36), new Person("Anira", 4),
-				new Person("Samarth", 2), new Person("Samantha", 2));
+		List<Person> list = Arrays.asList(new Person("Pk", 36), new Person("Dv", 36), new Person("An", 4), new Person("Sam", 2), new Person("Sami", 2));
 
 		printByCriteria(list, person -> true);
 		// printAll(list); updated with lambda version
 
 		// Sort by name
-		Collections.sort(list,
-				(person1, person2) -> person1.getName().toLowerCase().compareTo(person2.getName().toLowerCase()));
+		Collections.sort(list, (person1, person2) -> person1.getName().toLowerCase().compareTo(person2.getName().toLowerCase()));
 
 		printByCriteria(list, person -> true);
 
 		// Sort by age increasing order
-		Collections.sort(list,
-				(person1, person2) -> Integer.valueOf(person1.getAge()).compareTo(Integer.valueOf(person2.getAge())));
+		Collections.sort(list, (person1, person2) -> Integer.valueOf(person1.getAge()).compareTo(Integer.valueOf(person2.getAge())));
 		printByCriteria(list, person -> true);
 
 		// Sort by age decreasing order

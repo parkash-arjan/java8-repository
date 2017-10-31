@@ -10,7 +10,7 @@ public class FilterLambda {
 
 	public static void main(String[] args) {
 
-		List<Person> list = Arrays.asList(new Person("Parkash", 36), new Person("Divya", 36), new Person("Anira", 4), new Person("Samarth", 2), new Person("Samantha", 2));
+		List<Person> list = Arrays.asList(new Person("Pk", 36), new Person("Dv", 36), new Person("An", 4), new Person("Sam", 2), new Person("Sami", 2));
 		System.out.println(list);
 
 		IFilter listS = (listp) -> {
