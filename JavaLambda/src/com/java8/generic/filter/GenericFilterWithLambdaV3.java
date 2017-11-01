@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
-public class GenericFilterWithLambdaV2 {
+public class GenericFilterWithLambdaV3 {
 
 	public static void main(String[] args) {
 
@@ -20,18 +21,14 @@ public class GenericFilterWithLambdaV2 {
 
 	}
 
-	public static <T> List<T> filter(List<T> list, FilterCriteria<T> criteria, Consumer<T> consumer) {
+	public static <T> List<T> filter(List<T> list, Predicate<T> criteria, Consumer<T> consumer) {
 		List<T> result = new ArrayList<>();
 		for (T t : list) {
-			if (criteria.isPassed(t)) {
+			if (criteria.test(t)) {
 				result.add(t);
 				consumer.accept(t);
 			}
 		}
 		return result;
 	}
-}
-
-interface FilterCriteria<C> {
-	public boolean isPassed(C criteria);
 }
