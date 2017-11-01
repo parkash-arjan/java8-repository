@@ -13,7 +13,7 @@ public class GenericFilterWithLambdaV3 {
 		// Test with list of strings
 		List<String> strList = Arrays.asList("Java", "Scala", "C#", "Python", "JavScript", "C", "C++", "Assembly");
 
-		filter(strList, (criteria) -> criteria.startsWith("C") ? true : false, (c) -> System.out.println(c));
+		filter(strList, (criteria) -> criteria.startsWith("C") ? true : false, System.out::println);
 
 		// Test with list of integers
 		List<Integer> intList = Arrays.asList(10, 14, 2, 8, 25, 47, 95, 1, 7, 85);
