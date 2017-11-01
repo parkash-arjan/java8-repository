@@ -6,12 +6,12 @@ import java.util.List;
 public class ListAggregationV2 {
 
 	public static void main(String[] args) {
-		List<Integer> ints = Arrays.asList(1, 3, 5, 2, 4, 6, 7, 10);
-
+		List<Integer> ints = Arrays.asList(20,1, 3, 5, 2, 4, 6, 7, 10);		
+		
 		// System.out.println(perfom(ints, (a, b) -> a + b));
 		// System.out.println(perfom(ints, (a, b) -> Math.min(a, b)));
 		// System.out.println(perfom(ints, (a, b) -> Math.max(a, b)));
-		System.out.println(perfom(ints, (a, b) -> (a | a) + 1)); // count { (a,b) -> (a|a) + 1) , (a, b) -> (a) + 1) }
+		System.out.println(perfom(ints, (a, b) -> ints.size()));
 
 	}
 
