@@ -11,8 +11,7 @@ public class ListAggregationV2 {
 		// System.out.println(perfom(ints, (a, b) -> a + b));
 		// System.out.println(perfom(ints, (a, b) -> Math.min(a, b)));
 		// System.out.println(perfom(ints, (a, b) -> Math.max(a, b)));
-		System.out.println(perfom(ints, (a, b) -> ints.size()));
-
+		//System.out.println(perfom(ints, (a, b) -> ints.size()));
 	}
 
 	// lambda => (a,b)->a+b;
