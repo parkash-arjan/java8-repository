@@ -13,20 +13,14 @@ public class PredicateExampleV3 {
 		Predicate<Integer> predicate1 = (a) -> a > 10;
 		Predicate<Integer> predicate2 = (a) -> a < 40;
 
-		System.out.println(predicate1.test(8));
-
-		System.out.println(predicate2.test(8));
-
-		System.out.println(predicate1.test(8) && predicate2.test(8));
-		System.out.println("------------------------------------");
-		foo(list, predicate1, predicate2);
-
+		Predicate<Integer> predicate3 = predicate1.and(predicate2);
+		foo(list, predicate3);
 	}
 
-	public static void foo(List<Integer> list, Predicate<Integer> predicate1, Predicate<Integer> predicate2) {
+	public static void foo(List<Integer> list, Predicate<Integer> predicate) {
 
 		for (Integer integer : list) {
-			if (predicate1.test(integer) && predicate2.test(integer)) {
+			if (predicate.test(integer)) {
 				System.out.println(integer);
 			}
 		}
