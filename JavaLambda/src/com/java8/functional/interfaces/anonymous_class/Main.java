@@ -2,27 +2,40 @@ package com.java8.functional.interfaces.anonymous_class;
 
 public class Main {
 
-	private int x = 2379;
+	private String string = "I am global string!";
 
 	public static void main(String[] args) {
 		Main main = new Main();
-		main.bar();
-
+		// main.bar();
+		main.bar_anonymous_class();
 	}
 
 	public void bar() {
-		// Method local values used inside lambda are effectively final
-		// Better to implicitly qualify them as final
-		int x = 9999;
-		final int y = 8888;
+
 		Foo foo = () -> {
-			System.out.println(x);
-			System.out.println(this.x);
-			System.out.println(y);
+			String string = "I am method Lambda local string!";
+			System.out.println(string);
+			System.out.println(this.string);
 		};
-		// this will cause compile time error online 19;
-		// x = 500;
+
 		foo.foo();
+	}
+
+	public void bar_anonymous_class() {
+		final String string = "I am method local string!";
+		Foo foo = new Foo() {
+			String string = "I am anonymous class global  string!";
+
+			@Override
+			public void foo() {
+				String string = "I am anonymous class method local  string!";
+				System.out.println(string);
+				System.out.println(this.string);
+			}
+		};
+
+		foo.foo();
+
 	}
 
 }
